@@ -1,13 +1,65 @@
-body {
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700&display=swap");
+
+* {
+  font-family: "Inter", "sans-serif";
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+}
+html {
+  font-family: "Inter", "sans-serif";
+  font-size: 14px !important;
+  /* color: #54565b; */
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@font-face {
+  font-family: "Inter";
+  src: url("./assets//fonts//Switzer-Regular.otf");
+}
+.svg-box2-active + ul {
+  display: block;
+}
+.svg-box2-active img {
+  transform: rotate(180deg);
+}
+.svg-box2:hover path {
+  fill: #54565b;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .actions-list li:hover {
+    @apply bg-afexgreen-lighter text-textgrey cursor-pointer;
+  }
+  .actions-list li {
+    @apply py-[6px] px-[9px];
+  }
+  .extras {
+    width: -webkit-fill-available;
+  }
+  .date-options li {
+    @apply py-[5px] px-[10px];
+  }
+  .date-options li:hover {
+    @apply text-afexgreen bg-afexgreen-lighter;
+  }
+
+  .date-column:hover .day {
+    @apply opacity-0;
+  }
+  .date-column:hover .time {
+    @apply opacity-100;
+  }
+  /* farm in farmers profile*/
+  .maps .gmnoprint {
+    @apply child:!rounded-3xl !top-10 !right-20 child:!w-[50px];
+  }
+  .maps .gmnoprint button {
+    @apply !w-[50px] !py-1;
+  }
+  .maps .gmnoprint button + div {
+    @apply !w-[40px];
+  }
 }
