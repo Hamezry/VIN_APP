@@ -1,8 +1,9 @@
 import { NavLink } from "react-router-dom";
 
 import { menu } from "../../context/routes";
-
+import { useAuthCtx } from "../../context/auth_context";
 function Sidebar() {
+const {logout } = useAuthCtx()
   const activeStyle =
     "border text-white text-[16px] font-medium shadow-xl rounded-3xl flex items-center gap-3 p-3";
   const baseStyle =
@@ -27,7 +28,7 @@ function Sidebar() {
         })}
       </div>
 
-      <h2 className="p-5 text-lg font-semibold">Profile</h2>
+      <h2 className="p-5 cursor-pointer text-lg font-semibold" onClick={()=>{logout()}}>Logout</h2>
     </div>
   );
 }

@@ -29,10 +29,14 @@ const AuthProvider = (props: WithChildren) => {
   }) => {
     setLoading(true);
     const resp = await performLogin(email, password);
+  
     setLoading(false);
+      if (!resp.access_token) {
+      // toast('error', 'Request failed!!!', 'invalid username or password');
+      return;
+    }
     localStorage.setItem("vin-access-token", resp?.access_token);
     localStorage.setItem("vin-auth-status", "true");
-    setIsAuthenticated(true);
     setLoading(false);
     return window.location.assign("/");
   };

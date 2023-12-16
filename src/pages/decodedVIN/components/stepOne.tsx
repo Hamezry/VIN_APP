@@ -13,7 +13,7 @@ interface UserData {
 export default function FormStep1() {
   const [selectedOption, setSelectedOption] = useState<any | null>(null);
   const decodedValues = usePostContext();
-  console.log(decodedValues, "vals");
+
   const _decodedData: UserData[] = (
     decodedValues?.responseData?.decoded_data
       ? Object.entries(decodedValues.responseData.decoded_data)
